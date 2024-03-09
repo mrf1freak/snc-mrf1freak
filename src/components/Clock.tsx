@@ -1,7 +1,5 @@
 import useCurrentTime from "@/hooks/useCurrentTime";
 import dayjs from "dayjs";
-import { useState } from "react";
-import { useInterval } from "usehooks-ts";
 
 export default function Clock() {
   const now = useCurrentTime();
