@@ -1,6 +1,6 @@
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import { Person } from "@/utils/common/person";
-import { getPersonFromDB } from "@/utils/server/db";
+import { prisma } from "@/prisma";
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -24,7 +24,7 @@ const getPerson: NextApiHandler = async (req, res) => {
       return;
   }
 
-  const user = await getPersonFromDB(person);
+  const user = await prisma.user.findFirst({ where: { name: person } });
 
   if (user) {
     res.status(200).json(user);
