@@ -21,7 +21,7 @@ export const MainLayout: FunctionComponent<
         "flex flex-col justify-center items-center"
       )}
     >
-      <div className={classNames("flex gap-2")}>
+      <div className={classNames("flex gap-2 mb-10")}>
         {Object.values(Person).map((person) => (
           <Button
             className={classNames(person == selectedPerson && "bg-gray-500")}
