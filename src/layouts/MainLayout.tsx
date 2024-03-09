@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import classNames from "classnames";
 import { Button } from "@/components/Button";
 import { Person } from "@/utils/common/person";
+import PersonDetails from "@/components/PersonDetails";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export const MainLayout: FunctionComponent<
         ))}
         <button />
       </div>
+      {selectedPerson && <PersonDetails id={selectedPerson} />}
     </main>
   );
 };
