@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { Button } from "@/components/Button";
 import { Person } from "@/utils/common/person";
 import PersonDetails from "@/components/PersonDetails";
+import Clock from "@/components/Clock";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export const MainLayout: FunctionComponent<
         <button />
       </div>
       {selectedPerson && <PersonDetails id={selectedPerson} />}
+      <Clock />
     </main>
   );
 };
