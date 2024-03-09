@@ -1,11 +1,14 @@
 import usePerson from "@/hooks/usePerson";
 import Skeleton from "./Skeleton";
+import useLogPerson from "@/hooks/useLogPerson";
 
 type PersonDetailsProps = {
   id: string;
 };
 export default function PersonDetails({ id }: PersonDetailsProps) {
   const { data: person, isLoading, isError } = usePerson(id);
+  useLogPerson(person);
+
   if (isLoading)
     return (
       <div className="max-w-xs w-full text-center rounded-lg pb-8 overflow-hidden bg-white/10">
