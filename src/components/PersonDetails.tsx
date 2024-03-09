@@ -56,8 +56,8 @@ export default function PersonDetails({ id }: PersonDetailsProps) {
           <div className="text-xs font-semibold opacity-60">Followers</div>
         </div>
         <div>
-          <div className="text-lg font-light">{person.followers}</div>
-          <div className="text-xs font-semibold opacity-60">Followers</div>
+          <div className="text-lg font-light">{person.following}</div>
+          <div className="text-xs font-semibold opacity-60">Following</div>
         </div>
       </div>
     </div>
