@@ -1,6 +1,7 @@
 import usePerson from "@/hooks/usePerson";
 import Skeleton from "./Skeleton";
 import useLogPerson from "@/hooks/useLogPerson";
+import NextImage from "next/image";
 
 type PersonDetailsProps = {
   id: string;
@@ -36,16 +37,22 @@ export default function PersonDetails({ id }: PersonDetailsProps) {
     );
   return (
     <div className="max-w-xs w-full text-center rounded-lg shadow-lg shadow-gray-700 pb-8 overflow-hidden">
-      <div>
-        <img
+      <div className="relative h-28">
+        <NextImage
           src={person.backgroundImageUrl}
-          className="w-full h-28 object-cover"
+          className="object-cover"
+          alt={`${person.name}_background`}
+          fill
         />
       </div>
-      <img
-        src={person.profilePictureUrl}
-        className="w-24 rounded-full aspect-square object-cover mx-auto -mt-12 border relative z-10"
-      />
+      <div className="w-24 rounded-full aspect-square object-cover mx-auto -mt-12 border relative z-10 overflow-hidden">
+        <NextImage
+          src={person.profilePictureUrl}
+          className="object-cover"
+          alt={`${person.name}_profile_picture`}
+          fill
+        />
+      </div>
       <div className="mt-5">
         <div>{person.name}</div>
         <div className="text-xs opacity-70">{person.title}</div>
