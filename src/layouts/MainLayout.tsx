@@ -25,7 +25,9 @@ export const MainLayout: FunctionComponent<
       <div className={classNames("flex gap-2 mb-10")}>
         {Object.values(Person).map((person) => (
           <Button
-            className={classNames(person == selectedPerson && "bg-gray-500")}
+            className={classNames(
+              person == selectedPerson && "bg-gray-700 rounded-lg"
+            )}
             onClick={() => setSelectedPerson(person)}
             key={person}
           >
