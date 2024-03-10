@@ -1,18 +1,18 @@
 import { User } from "@/utils/common/person";
 import useCurrentTime from "./useCurrentTime";
 import { useLogs } from "@/contexts/useLogs";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { isEqual } from "lodash";
 
 export default function useLogPerson(person?: User) {
   const now = useCurrentTime();
   const { enableLogs } = useLogs();
-  const [currentPerson, setCurrentPerson] = useState(person);
+  const currentPerson = useRef<User>();
 
   useEffect(() => {
-    if (enableLogs && person && !isEqual(currentPerson, person)) {
+    if (enableLogs && person && !isEqual(currentPerson.current, person)) {
       console.log(person, now);
     }
-    setCurrentPerson(person);
-  }, [person, enableLogs, now, currentPerson]);
+    currentPerson.current = person;
+  }, [person, enableLogs, now]);
 }
