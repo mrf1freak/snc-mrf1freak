@@ -1,4 +1,4 @@
-import useCurrentTime from "@/hooks/useCurrentTime";
+import useCurrentTime from "@/hooks/utils/useCurrentTime";
 import dayjs from "dayjs";
 
 export default function Clock() {

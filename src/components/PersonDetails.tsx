@@ -1,6 +1,6 @@
-import usePerson from "@/hooks/usePerson";
+import usePerson from "@/hooks/person/usePerson";
 import Skeleton from "./Skeleton";
-import useLogPerson from "@/hooks/useLogPerson";
+import useLogPerson from "@/hooks/utils/useLogPerson";
 import NextImage from "next/image";
 
 type PersonDetailsProps = {
