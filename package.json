@@ -10,6 +10,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.9",
     "@prisma/client": "^5.10.2",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.10",

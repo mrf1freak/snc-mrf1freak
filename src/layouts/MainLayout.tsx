@@ -5,6 +5,7 @@ import { Button } from "@/components/Button";
 import { Person } from "@/utils/common/person";
 import PersonDetails from "@/components/PersonDetails";
 import Clock from "@/components/Clock";
+import { UserButton } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,9 @@ export const MainLayout: FunctionComponent<
       </div>
       {selectedPerson && <PersonDetails id={selectedPerson} />}
       <Clock />
+      <div className="absolute top-4 left-4">
+        <UserButton />
+      </div>
     </main>
   );
 };
